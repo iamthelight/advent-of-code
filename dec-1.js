@@ -200,13 +200,27 @@ var arr = [1788,
   1903
 ]
 
-for (i = 0; i < arr.length; i++) {
-  for (j = i + 1; j < arr.length; j++) {
-    for (k = j + 1; k < arr.length; k++) {
-        if (arr[i] + arr[j] + arr[k] === 2020) {
-            console.log(arr[i] + ' * ' + arr[j] + ' * ' + arr[k] + ' = ' + (arr[i] * arr[j] * arr[k]));
-            return;
+let getProductByTwos = (arr) => {
+    for (i = 0; i < arr.length; i++) {
+        for (j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] === 2020) {
+                return (arr[i] + ' * ' + arr[j] + ' = ' + (arr[i] * arr[j]));
+            }
         }
     }
-  }
 }
+
+let getProductByThrees = (arr) => {
+    for (i = 0; i < arr.length; i++) {
+    for (j = i + 1; j < arr.length; j++) {
+        for (k = j + 1; k < arr.length; k++) {
+            if (arr[i] + arr[j] + arr[k] === 2020) {
+                return (arr[i] + ' * ' + arr[j] + ' * ' + arr[k] + ' = ' + (arr[i] * arr[j] * arr[k]));
+            }
+        }
+    }
+    }
+}
+
+console.log(getProductByTwos(arr));
+console.log(getProductByThrees(arr));
